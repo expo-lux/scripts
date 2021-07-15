@@ -1,0 +1,10 @@
+{
+  "dbname" : "mob",
+  "user" :"user",
+  "password": "user",
+  "host" : "10.3.1.41",
+  "port" : 5432,
+  "remote_server": "http://10.15.13.1:9304/im/photo",
+  "data_folders": "/data,/data2,/data3",
+  "dry_run": true
+}

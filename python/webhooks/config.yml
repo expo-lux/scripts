@@ -1,0 +1,25 @@
+loglevel: DEBUG
+smtp_subject: Не забудьте задокументировать изменения
+smtp_from: scm_manager@x.ru
+smtp_server: smtp.yandex.ru
+smtp_username: scm_manager@x.com
+smtp_password: 7Y2y6SDv
+smtp_port: 587
+create_rules:
+  -
+    blacklist: [ 45cea3b2_res ]
+    e-mail: [ '{author_mail}' ]
+    whitelist: [ .*yml$, .*json$ ]
+    message_template: |-
+      Уважаемый(ая) {author_name}, вы запушили коммит {id} с описанием:
+      {description}
+      Не забудьте задокументировать изменения сделанные в файлах:
+      {files}
+update_rules:
+  -
+    blacklist: [ 45cea3b2_res ]
+    e-mail: [ '{author_mail}' ]
+    whitelist: [ .*yml$, .*json$ ]
+    message_template: |-
+      Modified files:
+      {files}

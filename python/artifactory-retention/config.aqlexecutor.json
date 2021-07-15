@@ -1,0 +1,41 @@
+{
+  "baseurl": "http://192.168.222.175:8082/artifactory/",
+  "apikey": "AKCp5dKEGHCJTks8n9Tkeoy2ceCsA5FnbnZkdo9Ubfvmus2CMYBrPx2G13zhY5T7kZPfqSTju",
+  "filter": {
+    "$and": [
+      {
+        "repo": {
+          "$eq": "pimi2"
+        }
+      },
+      {
+        "path": {
+          "$match": "ru/emias/pimi/aqlExecutor*"
+        }
+      },
+      {
+        "$and": [
+          {
+            "created": {
+              "$before": "8w"
+            }
+          },
+          {
+            "$or": [
+              {
+                "stat.downloads": {
+                  "$eq": 0
+                }
+              },
+              {
+                "stat.downloaded": {
+                  "$before": "8w"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

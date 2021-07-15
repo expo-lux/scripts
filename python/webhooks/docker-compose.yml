@@ -1,0 +1,13 @@
+version: '3'
+services:
+  webhook:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4001:9998"
+    volumes:
+      - "./config.yml:/app/config.yml"
+    #command: >
+    #  sh -c "python webhook.py 9999"

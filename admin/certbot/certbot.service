@@ -1,0 +1,14 @@
+[Unit]
+Description=Certbot
+Documentation=file:///usr/share/doc/python-certbot-doc/html/index.html
+Documentation=https://letsencrypt.readthedocs.io/en/latest/
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/perl -e 'sleep int(rand(3600))'
+ExecStart=/bin/sh -c  'HOSTNAME=`uname -n`; \
+ /usr/bin/certbot -q renew \
+ || echo "Автоматическое обновление сертификатов на  сервере \
+ $HOSTNAME завершилось с ошибкой. Выполните команду sudo certbot renew, \
+ чтобы выяснить на каком этапе это произошло" \
+ | mutt -s "$HOSTNAME: обновление сертификатов завершилось ошибкой" support@example.com'
+PrivateTmp=true

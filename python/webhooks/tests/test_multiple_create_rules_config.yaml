@@ -1,0 +1,39 @@
+loglevel: CRITICAL
+smtp_subject: Не забудьте задокументировать изменения
+smtp_from: scm_manager@x.ru
+smtp_server: smtp.yandex.ru
+smtp_username: scm_manager@x.com
+smtp_port: 587
+smtp_password: somepassword
+create_rules:
+  - 
+    blacklist: [ templates/log4j2.xml.j2 ]
+    e-mail: [ support@x.ru ]
+    whitelist: [ .*xml.j2$ ]
+    message_template: |-
+      Added files:
+      {files}
+  -
+    blacklist: [ .*xml.j2]
+    e-mail: [ i.ivanov@x.ru, support@x ]
+    whitelist: [ Tools/deploy/roles.* ]
+    message_template: |-
+      Added files:
+      {files}
+update_rules: 
+  - 
+    blacklist: [ context.xml.j2 ]
+    e-mail: [ me@ya.ru]
+    whitelist: [ Tools/deploy/roles.* ]
+    message_template: |-
+      Modified files:
+      {files}
+delete_rules:
+  - 
+    blacklist: [ .yml$, .xml$]
+    e-mail: [ support@x, admin@x.ru ]
+    whitelist: [ Tools/deploy ]
+    message_template: |-
+      Removed files:
+      {files}
+

@@ -1,0 +1,58 @@
+{
+  "properties": {},
+  "author": {
+    "mail": null,
+    "name": "i.ivanov",
+    "valid": true
+  },
+  "branches": [
+    "ONCO-release-1.9.0"
+  ],
+  "date": 1554119675000,
+  "description": "Merge with f-ONCO-7003-addDeployEO",
+  "id": "45cea3b2a7c8dd83e6a31148ee1e57e6853f5f99",
+  "modifications": {
+    "added": [
+      "Tools/deploy/deploy_oncology_tpak.sh",
+      "Tools/deploy/deploy_oncology_tpak_HT.sh",
+      "Tools/deploy/inv-oncology-local-01.yml",
+      "Tools/deploy/inv-oncology-tpak-HT.yml",
+      "Tools/deploy/inv-oncology-tpak.yml",
+      "Tools/deploy/oncology.yml",
+      "Tools/deploy/roles/onco-pipe-engine/templates/log4j2.xml.j2",
+      "Tools/deploy/roles/onco-registry/tasks/liquibase.yml",
+      "Tools/deploy/roles/onco-registry/templates/onco-registry/liquibase_run.sh.j2",
+      "Tools/deploy/roles/onco-registry/templates/onco-registry/log4j2.xml.j2",
+      "Tools/deploy/roles/onco-registry/templates/onco-treatment-cdss/log4j2.xml.j2"
+    ],
+    "modified": [
+      "Tools/deploy/roles/onco-pipe-engine/defaults/main.yml",
+      "Tools/deploy/roles/onco-pipe-engine/tasks/main.yml",
+      "Tools/deploy/roles/onco-pipe-engine/templates/context.xml.j2",
+      "Tools/deploy/roles/onco-registry/defaults/main.yml",
+      "Tools/deploy/roles/onco-registry/tasks/main.yml",
+      "Tools/deploy/roles/onco-registry/templates/onco-registry/clusterInfinispan.xml.j2"
+    ],
+    "removed": [
+      "Tools/deploy/inv-onco-pipe-engine-local-01.yml",
+      "Tools/deploy/inv-onco-pipe-engine-local-cluster.yml",
+      "Tools/deploy/inv-onco-pipe-engine-tpak.yml",
+      "Tools/deploy/inv-onco-registry-local-01.yml",
+      "Tools/deploy/inv-onco-registry-tpak.yml",
+      "Tools/deploy/onco-pipe-engine.yml",
+      "Tools/deploy/onco-registry.yml",
+      "Tools/deploy/roles/liquibase/defaults/main.yml",
+      "Tools/deploy/roles/liquibase/tasks/main.yml",
+      "Tools/deploy/roles/liquibase/templates/liquibase_run.sh.j2",
+      "Tools/deploy/roles/onco-pipe-engine/files/log4j2.xml",
+      "Tools/deploy/roles/onco-registry/files/onco-registry/log4j2.xml",
+      "Tools/deploy/roles/onco-registry/files/onco-treatment-cdss/log4j2.xml"
+    ]
+  },
+  "parents": [
+    "64da194e8c47713360932576405ab7698b754c99",
+    "9c76191b654386d6a5d270e1406716ae3d0f8da2"
+  ],
+  "tags": [],
+  "valid": true
+}

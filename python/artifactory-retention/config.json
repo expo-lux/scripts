@@ -1,0 +1,50 @@
+{
+  "baseurl" : "http://192.168.222.175:8082/artifactory/",
+  "apikey" : "AKCp5dKEGHCJTks8n9Tkeoy2ceCsA5FnbnZkdo9Ubfvmus2CMYBrPx2G13zhY5T7kZPfqSTju",
+  "filter": {
+    "$and": [
+      {
+        "name": {
+          "$eq": "manifest.json"
+        }
+      },
+      {
+        "repo": {
+          "$eq": "docker-local"
+        }
+      },
+      {
+        "$or": [
+          {
+            "path": {
+              "$match": "*scm-manager-webhooks/*"
+            }
+          }
+        ]
+      },
+      {
+        "$or": [
+          {
+            "$and": [
+              {
+                "stat.downloads": {
+                  "$eq": 0
+                }
+              },
+              {
+                "created": {
+                  "$before": "1d"
+                }
+              }
+            ]
+          },
+          {
+            "stat.downloaded": {
+              "$before": "1d"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

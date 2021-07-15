@@ -1,0 +1,12 @@
+-
+  recipients : [ ]
+  message: |
+    Уважаемый(ая) dmitry_shavrin, вы запушили коммит 1f7daced6f16ba59afce70d4c29be83da2d9b4d1 с описанием:
+    add k8s. Добавлены настройки для kubernetes
+    Не забудьте задокументировать изменения сделанные в файлах:
+    k8s/client-cluster-ip-service.yml
+    k8s/client-deployment.yml
+    k8s/database-persistent-volume-claim.yml
+    k8s/server-cluster-ip-service.yml
+    k8s/server-deployment.yml
+    k8s/worker-deployment.yml

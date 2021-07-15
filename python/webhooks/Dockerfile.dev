@@ -1,0 +1,18 @@
+FROM python:3.7-alpine
+
+ENV PYTHONUNBUFFERED 1
+
+COPY ./requirements.dev.txt /requirements.dev.txt
+RUN pip install -r /requirements.dev.txt
+
+RUN mkdir /app
+WORKDIR /app
+COPY . /app
+
+RUN adduser -D user
+USER user
+
+EXPOSE 9998
+
+# TODO: replace CMD with command to run test
+CMD ["python", "webhook.py", "9998"]

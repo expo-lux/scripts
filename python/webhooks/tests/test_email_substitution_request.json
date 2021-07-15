@@ -1,0 +1,35 @@
+{
+  "properties": {},
+  "author": {
+    "mail": "i.ivanov@gmail.com",
+    "name": "dmitry_shavrin",
+    "valid": true
+  },
+  "branches": [
+    "master"
+  ],
+  "date": 1554402802000,
+  "description": "add k8s. Добавлены настройки для kubernetes",
+  "id": "1f7daced6f16ba59afce70d4c29be83da2d9b4d1",
+  "modifications": {
+    "added": [
+      "k8s/client-cluster-ip-service.yml",
+      "k8s/client-deployment.yml",
+      "k8s/database-persistent-volume-claim.yml",
+      "k8s/postgres-cluster-ip-service.yml",
+      "k8s/postgres-deployment.yml",
+      "k8s/redis-cluster-ip-service.yml",
+      "k8s/redis-deployment.yml",
+      "k8s/server-cluster-ip-service.yml",
+      "k8s/server-deployment.yml",
+      "k8s/worker-deployment.yml"
+    ],
+    "modified": [],
+    "removed": []
+  },
+  "parents": [
+    "4ad7768ba9c57638be93f99dc04da41bb80614fb"
+  ],
+  "tags": [],
+  "valid": true
+}

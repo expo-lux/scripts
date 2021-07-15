@@ -1,0 +1,85 @@
+{
+  "baseurl" : "http://192.168.222.175:8082/artifactory/",
+  "apikey" : "AKCp5dKEGHCJTks8n9Tkeoy2ceCsA5FnbnZkdo9Ubfvmus2CMYBrPx2G13zhY5T7kZPfqSTju",
+  "filter": {
+    "$and": [
+      {
+        "name": {
+          "$eq": "manifest.json"
+        }
+      },
+      {
+        "repo": {
+          "$eq": "docker-local"
+        }
+      },
+      {
+        "$or": [
+	      {
+            "path": {
+              "$match": "*emias-cvdr-emergency-backend/*"
+            }
+          },
+          {
+            "path": {
+              "$match": "*emias-cvdr-emergency-frontend/*"
+            }
+          },
+          {
+            "path": {
+              "$match": "*emias-cvdr-hospital-backend/*"
+            }
+          },
+          {
+            "path": {
+              "$match": "*emias-cvdr-hospital-frontend/*"
+            }
+          },
+          {
+            "path": {
+              "$match": "*emias-cvdr-identification-backend/*"
+            }
+          },
+          {
+            "path": {
+              "$match": "*emias-cvdr-identification-frontend/*"
+            }
+          },
+          {
+            "path": {
+              "$match": "*emias-cvdr-mobile-backend/*"
+            }
+          },
+          {
+            "path": {
+              "$match": "*emias-cvdr-mobile-frontend/*"
+            }
+          }
+        ]
+      },
+      {
+        "$or": [
+          {
+            "$and": [
+              {
+                "stat.downloads": {
+                  "$eq": 0
+                }
+              },
+              {
+                "created": {
+                  "$before": "3w"
+                }
+              }
+            ]
+          },
+          {
+            "stat.downloaded": {
+              "$before": "3w"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+- 
+  recipients : [ support@x.ru ]
+  message: |
+    Added files:
+    Tools/deploy/roles/onco-registry/templates/onco-registry/log4j2.xml.j2
+    Tools/deploy/roles/onco-registry/templates/onco-treatment-cdss/log4j2.xml.j2
+-
+  recipients: [ i.ivanov@x.ru, support@x ]
+  message: | 
+    Added files:
+    Tools/deploy/roles/onco-registry/tasks/liquibase.yml
+    Tools/deploy/roles/onco-registry/templates/onco-registry/liquibase_run.sh.j2
+- 
+  recipients: [ me@ya.ru]
+  message: |
+    Modified files:
+    Tools/deploy/roles/onco-pipe-engine/defaults/main.yml
+    Tools/deploy/roles/onco-pipe-engine/tasks/main.yml
+    Tools/deploy/roles/onco-registry/defaults/main.yml
+    Tools/deploy/roles/onco-registry/tasks/main.yml
+    Tools/deploy/roles/onco-registry/templates/onco-registry/clusterInfinispan.xml.j2
+- 
+  recipients: [ support@x, admin@x.ru ]
+  message: |
+    Removed files:
+    Tools/deploy/roles/liquibase/templates/liquibase_run.sh.j2

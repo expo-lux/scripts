@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass %~dp0\backupMongo.ps1 -fileprefix test.upravdomgkh.ru_db -db reformagkh -excludeCollectionsWithPrefix FIAS_ -OutDir C:\Backup\out
